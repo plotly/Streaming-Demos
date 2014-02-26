@@ -6,46 +6,48 @@ var querystring = require('querystring');
 
 var user = "Streaming-Demo"; // Your plotly username or email. Sign up here: https://plot.ly/ssu
 var key = "unqmhifzd1"; // Your plotly API key, view here: https://plot.ly/api/key
-var token = "rso0jwpmfg"; // Your plotly streaming token, generate here: https://plot.ly/settings
-var token2 = "kydr0ia5tj"; 
+var token1 = "rso0jwpmfg";
+var token2 = "kydr0ia5tj";
+var filename = "streaming second";
+var server = 'http://ec2-54-196-84-85.compute-1.amazonaws.com/'; //'http://ec2-54-225-12-108.compute-1.amazonaws.com/'
 
 var data = [{
-    'x':[]
-  , 'y':[]
-  , 'type':'scatter'
-  , 'mode':'lines'
+    x:[1, 1, 1, 1, 1]
+  , y:[5, 6, 7, 8, 9]
+  , type:'scatter'
+  , mode:'lines'
   , stream: {
-      "token": token
-    , "maxpoints": 500
+      token: token1
+    , maxpoints: 10
     }
   }
   ,{
-    x:[]
-  , y:[]
+    x:[2, 2, 2, 2, 2]
+  , y:[1, 2, 3, 4, 5]
   , type: 'scatter'
   , mode: 'lines'
-  , stream: {
+/*  , stream: {
       token: token2
-    , maxpoints: 500
-    }
+    , maxpoints: 10
+    }*/
   }
 ]
 
 var query = {
-    "un": user
-  , "key": key
-  , "origin": "plot"
-  , "platform": "REST"
-  , "args": JSON.stringify(data)
-  , "kwargs": JSON.stringify({
-     "filename": "streaming-plot"
-   , "fileopt": "overwrite"
-    , "layout": {
-        "title": "streaming-demo"
-      , "width" : 600
-      , "height": 600
+    un: user
+  , key: key
+  , origin: "plot"
+  , platform: "REST"
+  , args: JSON.stringify(data)
+  , kwargs: JSON.stringify({
+     filename: filename
+   , fileopt: "overwrite"
+    , layout: {
+        title: "streaming-demo"
+      , width : 600
+      , height: 600
     }
-    , "world_readable": true
+    , world_readable: true
   })
 };
 
@@ -54,7 +56,7 @@ request(
     {
         method: 'POST'
       // , uri: 'https://plot.ly/clientresp'
-      , uri: 'http://ec2-54-196-84-85.compute-1.amazonaws.com/clientresp/'
+      , uri: server+'clientresp/'
       , body:  querystring.stringify(query)
     }
   , function (err, res) {

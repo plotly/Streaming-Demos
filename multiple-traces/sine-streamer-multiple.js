@@ -1,27 +1,32 @@
 var hyperquest = require('hyperquest')
   // , stream_token = require('../config.json').simpleStreamToken // ADD YOUR STREAM TOKEN HERE
 
-var token = "rso0jwpmfg";
+var token1 = "rso0jwpmfg";
+var token2 = "kydr0ia5tj";
 
-
-var options =  {
+function options(token) {
+  return {
     method: 'POST'
-  , uri: "http://ec2-23-22-11-102.compute-1.amazonaws.com:10101"
+  , uri: "http://stream.plot.ly"
   , port: 10101
   , headers: {
       "connection": "keepalive"
     , "plotly-streamtoken": token//stream_token
+    }
   }
 }
 
-var req = hyperquest(options)
+var req1 = hyperquest(options(token1));
+var req2 = hyperquest(options(token2));
 
 
 var x = 0
 
 setInterval( function () {
     x += 0.05
-    req.write(JSON.stringify({x: x, y: signal(x)})+ "\n")
+    req1.write(JSON.stringify({x: x, y: x})+ "\n")    
+//    req1.write(JSON.stringify({x: x, y: signal(x)})+ "\n")
+//    req2.write(JSON.stringify({x: x, y: -signal(x)})+ "\n")
 }, 50)
 
 function signal (x) {
@@ -29,14 +34,3 @@ function signal (x) {
                    + 0.2*Math.sin(x/3)
                    + 0.3*Math.cos(5*x))
 }
-
-// var x0 = 0
-//   , nx = 500
-//   , xt = 2*Math.PI
-//   , dx = xt/(nx-1)
-//   , x = []
-
-// while (x0 <= xt) {
-//     x.push(x0)
-//     x0 += dx
-// }

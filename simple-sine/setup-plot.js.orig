@@ -1,0 +1,97 @@
+<<<<<<< HEAD
+var request = require('request')
+  , querystring = require('querystring')
+  , config = require("../config.json")
+  , key = config['ben2-api-key']
+  , user = "BenPostlethwaite"
+  , token = config['ben2-token']
+
+var data1 = {
+=======
+var request = require('request');
+var querystring = require('querystring');
+
+
+// DEV
+
+var user = "Streaming-Demo"; // Your plotly username or email. Sign up here: https://plot.ly/ssu
+var key = "unqmhifzd1"; // Your plotly API key, view here: https://plot.ly/api/key
+var token = "rso0jwpmfg"; // Your plotly streaming token, generate here: https://plot.ly/settings
+var token2 = "kydr0ia5tj"; 
+
+var data = [{
+>>>>>>> 269b917fc30f52f9787a117817f00af3fa0a04cf
+    'x':[]
+  , 'y':[]
+  , 'type':'scatter'
+  , 'mode':'lines'
+  , stream: {
+<<<<<<< HEAD
+    "token": token
+  , "maxpoints": 500
+  }
+}
+
+var data = [data1]
+=======
+      "token": token
+    , "maxpoints": 500
+    }
+  }
+  ,{
+    x:[]
+  , y:[]
+  , type: 'scatter'
+  , mode: 'lines'
+  , stream: {
+      token: token2
+    , maxpoints: 500
+    }
+  }
+]
+>>>>>>> 269b917fc30f52f9787a117817f00af3fa0a04cf
+
+var query = {
+    "un": user
+  , "key": key
+  , "origin": "plot"
+  , "platform": "REST"
+  , "args": JSON.stringify(data)
+  , "kwargs": JSON.stringify({
+<<<<<<< HEAD
+     "filename": "mung3"
+=======
+     "filename": "streaming-plot"
+>>>>>>> 269b917fc30f52f9787a117817f00af3fa0a04cf
+   , "fileopt": "overwrite"
+    , "layout": {
+        "title": "streaming-demo"
+      , "width" : 600
+      , "height": 600
+    }
+    , "world_readable": true
+  })
+};
+
+
+request(
+    {
+        method: 'POST'
+      // , uri: 'https://plot.ly/clientresp'
+      , uri: 'http://ec2-54-196-84-85.compute-1.amazonaws.com/clientresp/'
+      , body:  querystring.stringify(query)
+    }
+  , function (err, res) {
+
+      if(res.statusCode == 200){
+        var payload = JSON.parse(res.body);
+        console.log(payload)
+      }
+
+      else {
+        console.log('error: '+ err, 'status', res.statusCode);
+      }
+
+    }
+
+)

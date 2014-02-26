@@ -2,6 +2,9 @@
   , token = require("../config.json")["ben2-token"]
 
 
+var token = "rso0jwpmfg";
+
+
 var options =  {
     method: 'POST'
   // , uri: "http://ec2-23-22-11-102.compute-1.amazonaws.com:10101"
@@ -9,12 +12,15 @@ var options =  {
   // , port: 80
   , headers: {
       "connection": "keepalive"
+<<<<<<< HEAD
     , "plotly-streamtoken": token
+=======
+    , "plotly-streamtoken": token//stream_token
+>>>>>>> 269b917fc30f52f9787a117817f00af3fa0a04cf
   }
 }
 
 var req = hyperquest(options)
-
 
 var x = 0
 

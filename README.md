@@ -5,7 +5,7 @@ Plotly streaming is an experimental feature and you should expect all the crazin
 ## What is Plotly streaming?
 1. Take a look at this and this!
 
-![Example 1](http://gifmaker.me/PlayFrameAnimation.php?folder=2014022607irslSbWrsvhRDC0n7zpX0K)
+![Example 1](https://raw.github.com/plotly/Streaming-Demos/master/readme_gifs/hansrosling.gif)
 
 2. This is real-time data, everybody viewing these streaming plots sees the same data at the same time.
 3. If you are the owner of the plot you can head over to the Plotly webapp and style your streaming plot. When you save it all the shared plots are updated live to reflect these changes.

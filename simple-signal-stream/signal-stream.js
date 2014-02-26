@@ -1,13 +1,12 @@
 var hyperquest = require('hyperquest')
-  , token = require("../config_bp.json")["token"]
+  , token = ""    // put your stream token here
   , Signal = require("random-signal")
 
 var options =  {
     method: 'POST'
   , uri: "http://stream.plot.ly/"
   , headers: {
-      "connection": "keepalive"
-    , "plotly-streamtoken": token
+      "plotly-streamtoken": token
   }
 }
 

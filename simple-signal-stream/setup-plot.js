@@ -1,8 +1,7 @@
 var Plotly = require('plotly')
-  , config = require("../config_bp.json")
-  , key = config['api-key'] // put your API KEY here
-  , user = config['user']   // put your user name here
-  , token = config['token'] // put your stream token here
+  , key = ""       // put your API KEY here
+  , user = ""      // put your user name here
+  , token = ""     // put your stream token here
 
 // build a data object
 var data = {

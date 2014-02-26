@@ -1,18 +1,19 @@
-var hyperquest = require('hyperquest')
-  // , stream_token = require('../config.json').simpleStreamToken // ADD YOUR STREAM TOKEN HERE
+ var hyperquest = require('hyperquest')
+  , token = require("../config.json")["ben2-token"]
+
 
 var options =  {
     method: 'POST'
-  , uri: "http://ec2-23-22-11-102.compute-1.amazonaws.com:10101"
-  , port: 10101
+  // , uri: "http://ec2-23-22-11-102.compute-1.amazonaws.com:10101"
+  , uri: "http://stream.plot.ly/"
+  // , port: 80
   , headers: {
       "connection": "keepalive"
-    , "plotly-streamtoken": ""//stream_token
+    , "plotly-streamtoken": token
   }
 }
 
 var req = hyperquest(options)
-
 
 var x = 0
 

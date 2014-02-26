@@ -1,25 +1,22 @@
-var request = require('request');
-var querystring = require('querystring');
+var request = require('request')
+  , querystring = require('querystring')
+  , config = require("../config.json")
+  , key = config['ben2-api-key']
+  , user = "BenPostlethwaite"
+  , token = config['ben2-token']
 
-
-// DEV
-
-var key = ""
-var user = ""
-
-var data2 = {
+var data1 = {
     'x':[]
   , 'y':[]
   , 'type':'scatter'
   , 'mode':'lines'
   , stream: {
-    "token": ""
+    "token": token
   , "maxpoints": 500
   }
 }
 
-
-var data = [data2]
+var data = [data1]
 
 var query = {
     "un": user
@@ -28,7 +25,7 @@ var query = {
   , "platform": "REST"
   , "args": JSON.stringify(data)
   , "kwargs": JSON.stringify({
-     "filename": "mung2"
+     "filename": "mung3"
    , "fileopt": "overwrite"
     , "layout": {
         "title": "bitcoin stock price"

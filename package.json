@@ -24,6 +24,8 @@
   "dependencies": {
     "hyperquest": "~0.2.0",
     "request": "~2.34.0",
-    "JSONStream": "~0.8.0"
+    "JSONStream": "~0.8.0",
+    "plotly": "~0.1.3",
+    "random-signal": "~0.0.0"
   }
 }

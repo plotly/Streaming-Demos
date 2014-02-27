@@ -34,7 +34,6 @@ data = {
   , 'mode':'lines'
   , stream: {
     "token": token
-  , "maxpoints": 100
   }
 }
 plotly.plot(data, un, key, layout)
@@ -45,8 +44,10 @@ That should give you a response which will look something like
 stream-host: 'http://stream.plot.ly',
 stream-status: 'All Streams Go!',
 url: 'https://plot.ly/~BenPostlethwaite/0',
-filename: 'mung3',
-message: 'High five! You successfuly sent some data to your account on plotly. View your plot in your browser at https://plot.ly/~BenPostlethwaite/0 or inside your plot.ly account where it is named "mung3"'
+filename: 'streamsAGoGO',
+message: 'High five! You successfuly sent some data to your account on plotly.
+View your plot in your browser at https://plot.ly/~BenPostlethwaite/0
+or inside your plot.ly account where it is named "streamsAGoGo"'
 ```
 All Streams Go! So now the streaming cluster has been initialized with your information and the streaming token has been configured to a particular data object. The return message shows us the sharable plot URL where we can view our streaming data as well as the address to stream to. So let's start our stream!
 
@@ -67,7 +68,7 @@ Okay, super easy? Well, for real-time sharable & embeddable data visualization i
 
 ## Intermediate streaming concepts
 - Data **MUST** be sent as newline separated JSON. The stream server parses incoming data streams on newlines, so without newlines it will just assume a very long single JSON object and eventually just destroy the stream.
-```json
+```javascript
 '{ "x": 3, "y": 1 }\n'
 ```
 - Incoming data should not be written faster than 50ms. We throttle incoming JSON objects at 50ms. While there is a buffer continuing to send data faster than 50ms will result in data loss.
@@ -78,5 +79,7 @@ Okay, super easy? Well, for real-time sharable & embeddable data visualization i
 
 ## Contact Us
 Lead Streaming Engineer - ben@plot.ly
-Lead API Engineer - chrisp@plot.ly
-tweet us @plotlygraphs
+
+Lead API Engineer - chris@plot.ly
+
+twitter @plotlygraphs

@@ -3,19 +3,16 @@
 Plotly streaming is an experimental feature and you should expect all the craziness that comes with this.
 
 ## What is Plotly streaming?
-1. Take a look at this and this!
-
 [![Double Pendulum Simluation in Plotly](readme_gifs/doublependulum.gif)](https://plot.ly/~streaming-demos/4/)
 
 
 [![Hans Rosling Bubble Chart in Plotly](readme_gifs/hansrosling.gif)](https://plot.ly/~streaming-demos/3/)
 
-
+1. Take a look at [this]() and [this]()!
 2. This is real-time data, everybody viewing these streaming plots sees the same data at the same time.
-3. If you are the owner of the plot you can head over to the Plotly webapp and style your streaming plot. When you save it all the shared plots are updated live to reflect these changes.
-4. You can open another users streaming shared plot in the Plotly webapp and make your own styles but saving will result in a static copy (you can't steal someone else's stream!).
-5. Changing the plot a stream token is linked to will automatically save the most recent data so viewers of the old plot will at least see the most recent static data.
-6. Again, this is a highly experimental feature, and our production cluster will be continuously updated, which unfortunately means breaking incoming streams ... be prepared to restart your scripts.
+3. If you are the owner of the plot you can head over to the Plotly webapp and style your streaming plot. When you save all the shared plots are live updated to reflect these changes.
+4. You can open another users streaming shared plot in the Plotly webapp and make your own styles but saving will result in a static copy (you can't steal someone else's stream).
+5. Changing the plot a stream token is linked to will automatically save the most recent data so viewers of the old plot will at least see a static copy of the most recent data.
 
 
 This repo contains several examples for working with the Plotly streaming API. There are 2 node.js repos and an IPython notebook example. As it is early days for Plotly's streaming API it should be considered experimental and will likely undergo changes as the feedback + iteration cycle continues. If you have any problems, notice any bugs (you will) or would like to provide us with suggestions you can hit us up at ben@plot.ly or send us a tweet at @plotlygraphs. We fully intend to add more examples to this repo, and if you have a sweet example that you would like us to include here, send a pull request!
@@ -23,7 +20,7 @@ This repo contains several examples for working with the Plotly streaming API. T
 See the individual Repo's for example specific documentation.
 
 
-## Basic streaming ideas
+## Basic streaming concepts
 
 Streaming has been added as an additional API layer on top of our [static graph API](http://plot.ly/api/). Therefore you follow the steps for making an API call to our plotting server and once confirmation is given proceed to stream data to the given address. Here is a little node.js demo:
 ```javascript
@@ -35,7 +32,7 @@ data = {
   , 'mode':'lines'
   , stream: {
     "token": token
-  , "maxpoints": 500
+  , "maxpoints": 100
   }
 }
 plotly.plot(data, un, key, layout)
@@ -53,8 +50,7 @@ All Streams Go! So now the streaming cluster has been initialized with your info
 
 ```javascript
 var hyperquest = require("hyperquest")
-var datastream = require("some-data-stream")
-
+var signalStream = require("random-signal")()
 var options =  {
     method: 'POST'
   , uri: "http://stream.plot.ly/"
@@ -62,11 +58,18 @@ var options =  {
   , "plotly-streamtoken": token
   }
 }
-
-var req = hyperquest(options)
-
-datastream.pipe(req)
+var plotlyStream = hyperquest(options)
+signalStream.pipe(req)
 ```
-Okay, super easy? Well, for real-time sharable & embeddable data visualization it sure is easier than all the other alternatives. So the general idea is to make a regular Plotly call which returns either a success or a fail. If your data object was formatted correctly and your user + api-key + streaming-token are valid then it will let you know you are good to stream. Then you point your data your at our servers and stream on! There are many cool features that haven't been discussed and a fair amount of considerations
+Okay, super easy? Well, for real-time sharable & embeddable data visualization it sure is easier than all the other alternatives. Check out the example folders in this Repo. If you can do the Node check out `simple-signal-stream` as it will get you up and streaming quickly.
 
-## Details
+## Intermediate streaming concepts
+- Data **MUST** be sent as newline separated JSON. The stream server parses incoming data streams on newlines, so without newlines it will just assume a very long single JSON object and eventually just destroy the stream.
+```json
+'{ "x": 3, "y": 1 }\n'
+```
+- Incoming data should not be written faster than 50ms. We throttle incoming JSON objects at 50ms. While there is a buffer continuing to send data faster than 50ms will result in data loss.
+- You can send multiple streams to the same plot by nesting stream tokens within the corrisponding data trace object. Similarly you can use the same token for multiple traces in a plot (they will show the same stream, so this is useful only in when using subplots).
+
+## Advanced streaming concepts
+- You must send data every minute otherwise we will consider the stream stale and destroy it. If your data comes in a slower rate send a heartbeat to let the server know it is still active. A heartbeat is simply a newline "\n" written within the minute window.

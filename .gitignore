@@ -2,6 +2,12 @@ node\ examples/node_modules/*
 simple-signal-stream/config_bp.json
 config.json
 
-IPython examples/config.json
-
 IPython examples/.ipynb_checkpoints/Animation - Gapminder Bubble Charts-checkpoint.ipynb
+
+IPython examples/.ipynb_checkpoints/Real-Time Time Series-checkpoint.ipynb
+
+IPython examples/.ipynb_checkpoints/Simulation - Double Pendulum-checkpoint.ipynb
+
+IPython examples/.ipynb_checkpoints/Streaming Quickstart with Python-checkpoint.ipynb
+
+IPython examples/config.json

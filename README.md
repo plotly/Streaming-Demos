@@ -9,11 +9,12 @@
 
 [![Hans Rosling Bubble Chart in Plotly](readme_gifs/hansrosling.gif)](https://plot.ly/~streaming-demos/3/)
 
-1. Take a look at [this]() and [this]()!
+1. Take a look at the actual streaming plots for the example .gifs above: [signalstream](), [doublePendulum]() and our take on a [Hans Rosling bubble chart]().
 2. This is real-time data, everybody viewing these streaming plots sees the same data at the same time.
-3. If you are the owner of the plot you can head over to the [Plotly app]("https://plot.ly") and style your streaming plot. When you save all the shared plots are live updated to reflect these changes.
-4. You can open another users streaming shared plot in the [Plotly app]("https://plot.ly") and make your own styles but saving will result in a static copy (you can't steal someone else's stream).
-5. Changing the plot which a stream token is linked to will automatically save the most recent data so viewers of the old plot will at least see a static copy of the most recent data.
+3. Stream plots are sharable, embeddable in any website and even in IPython notebooks!
+4. If you are the owner of the plot you can head over to the [Plotly app]("https://plot.ly") and style your streaming plot. When you save all the shared plots are live updated to reflect these changes.
+5. You can open another users streaming shared plot in the [Plotly app]("https://plot.ly") and make your own styles but saving will result in a static copy (you can't steal someone else's stream).
+6. Changing the plot which a stream token is linked to will automatically save the most recent data so viewers of the old plot will at least see a static copy of the most recent data.
 
 
 This repo contains several examples for working with the Plotly streaming API. There is 1 node.js repo and an IPython notebook example. As it is early days for Plotly's streaming API it should be considered experimental and will likely undergo changes as the feedback + iteration cycle continues. If you have any problems, notice any bugs (you will) or would like to provide us with suggestions you can hit us up at ben@plot.ly or send us a tweet at @plotlygraphs. We fully intend to add more examples to this repo, and if you have a sweet example that you would like us to include here, send a pull request!

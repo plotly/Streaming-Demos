@@ -1,6 +1,6 @@
 # Real-Time Streaming with Python and IPython
 
-### View real-time updating notebooks here: [http://nbviewer.ipython.org/github/plotly/Streaming-Demos/tree/master/IPython%20examples/](http://nbviewer.ipython.org/github/plotly/Streaming-Demos/tree/master/IPython%20examples/)
+### View these notebooks here: [http://nbviewer.ipython.org/github/plotly/Streaming-Demos/tree/master/IPython%20examples/](http://nbviewer.ipython.org/github/plotly/Streaming-Demos/tree/master/IPython%20examples/)
 
 ### Running these notebooks
 Fill in the `config.json` file with your plotly credentials:

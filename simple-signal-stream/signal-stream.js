@@ -24,7 +24,7 @@ var httpOpts =  {
  * Plotly only accepts stringified newline seperated JSON
  * so the separator is very important
  */
-var sigOpts = {sep: "\n"}
+var sigOpts = {sep: "\n", tdelta: 100}
 
 var signalstream = Signal(sigOpts)
 var plotlystream = hyperquest(httpOpts)

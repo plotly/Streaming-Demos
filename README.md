@@ -1,7 +1,7 @@
 # Plotly streaming examples
 
 ## What is Plotly streaming?
-[![Mock Signal Data](readme_gifs/real-timesensor.gif)](http://plot.ly/~bpostlethwaiteb/50/)
+[![Mock Signal Data](readme_gifs/real-timesensor.gif)](http://plot.ly/~streaming-demos/6)
 
 
 [![Double Pendulum Simluation in Plotly](readme_gifs/doublependulum.gif)](https://plot.ly/~streaming-demos/4/)
@@ -9,7 +9,7 @@
 
 [![Hans Rosling Bubble Chart in Plotly](readme_gifs/hansrosling.gif)](https://plot.ly/~streaming-demos/3/)
 
-1. Take a look at the actual streaming plots for the example .gifs above: [signalstream](http://plot.ly/~bpostlethwaiteb/50/), [doublePendulum]() and our take on a [Hans Rosling bubble chart]().
+1. Take a look at the actual streaming plots for the example .gifs above: [signalstream](http://plot.ly/~streaming-demos/6), [doublePendulum]() and our take on a [Hans Rosling bubble chart]().
 2. This is real-time data, everybody viewing these streaming plots sees the same data at the same time.
 3. Stream plots are sharable, embeddable in any website and even in IPython notebooks!
 4. If you are the owner of the plot you can head over to the [Plotly app]("https://plot.ly") and style your streaming plot. When you save all the shared plots are live updated to reflect these changes.

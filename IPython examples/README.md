@@ -22,7 +22,7 @@ View your API key and streaming tokens in your settings: [https://plot.ly/settin
 ##### Simple Rose Animation: [https://plot.ly/~streaming-demos/1](https://plot.ly/~streaming-demos/1)
 ##### Time Series: [https://plot.ly/~streaming-demos/12](https://plot.ly/~streaming-demos/12) 
 ##### Never-Ending Double Pendulum Simulation: [https://plot.ly/~streaming-demos/4](https://plot.ly/~streaming-demos/4)
-#### Forever-Repeating Hans Rosling Bubble Chart: [https://plot.ly/~streaming-demos/3](https://plot.ly/~streaming-demos/3)
+##### Forever-Repeating Hans Rosling Bubble Chart: [https://plot.ly/~streaming-demos/3](https://plot.ly/~streaming-demos/3)
 
 
 ### Get in touch!

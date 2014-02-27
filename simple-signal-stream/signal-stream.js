@@ -31,3 +31,8 @@ var plotlystream = hyperquest(httpOpts)
 
 // Okay - stream to our plot!
 signalstream.pipe(plotlystream)
+
+plotlystream.on("error", function (err) {
+    signalstream.destroy()
+    console.log(err)
+}

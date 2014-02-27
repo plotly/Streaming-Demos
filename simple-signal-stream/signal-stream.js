@@ -1,8 +1,17 @@
-var hyperquest = require('hyperquest')
-  , token = ""    // put your stream token here
-  , Signal = require("random-signal")
+var hyperquest = require('hyperquest') // this is a stream friendly http request module from Substack
+  , config = require("./config.json")  // put your user credentials in config.json
+  , Signal = require("random-signal")  // This module produces random signal data
+  , token = config["token"]
 
-var options =  {
+
+// check for tokens
+if (!token) {
+    console.log("  Please put the plot.ly/settings streaming token into the config.json file")
+    process.exit()
+}
+
+// hyperquest options
+var httpOpts =  {
     method: 'POST'
   , uri: "http://stream.plot.ly/"
   , headers: {
@@ -10,17 +19,11 @@ var options =  {
   }
 }
 
-// options for our random signal stream
-var sigopts = {
-    sep: "\n"     // seperator
-  , tdelta: 50    // milliseconds
-  , hz: 0.5       // 1/sec
-  , noiseHz: 1    // 1/sec
-}
+// random signal stream options
+var sigOpts = {sep: "\n"}
 
-var sigstream = Signal(sigopts)
-
-var req = hyperquest(options)
+var signalstream = Signal(sigOpts)
+var plotlystream = hyperquest(httpOpts)
 
 
 /*
@@ -28,4 +31,4 @@ var req = hyperquest(options)
  * We are streaming newline separated stringified JSON!
  * '{"x": 2, "y": 3}\n'
  */
-sigstream.pipe(req)
+signalstream.pipe(plotlystream)

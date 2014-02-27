@@ -1,11 +1,18 @@
 var Plotly = require('plotly')
-  , key = ""       // put your API KEY here
-  , user = ""      // put your user name here
-  , token = ""     // put your stream token here
+  , config = require("./config.json") // put your user credentials in config.json
+  , key = config['apikey']
+  , user = config['user']
+  , token = config['token']
 
-// build a data object
+// check for user data
+if (!key || !user || !token) {
+    console.log("  Please put the plot.ly/settings user credentials into the config.json file")
+    process.exit()
+}
+
+// build a data object - see https://plot.ly/api/rest/docs for information
 var data = {
-    'x':[]   // empty arrays since we will stream our data to them
+    'x':[]   // empty arrays since we will be streaming our data to into these arrays
   , 'y':[]
   , 'type':'scatter'
   , 'mode':'lines+markers'

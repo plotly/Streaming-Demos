@@ -35,4 +35,4 @@ signalstream.pipe(plotlystream)
 plotlystream.on("error", function (err) {
     signalstream.destroy()
     console.log(err)
-}
+})

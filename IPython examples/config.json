@@ -1,9 +1,5 @@
 {
-    "tokens": ["", "", ""],
-    "api_key": "",
-    "plotly_username": "",
-     "consumer_key": "",
-     "consumer_secret": "",
-     "access_token": "",
-     "access_token_secret": ""
+    "plotly_streaming_tokens": ["", "", ""],
+    "plotly_api_key": "",
+    "plotly_username": ""
 }

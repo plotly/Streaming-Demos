@@ -1,7 +1,6 @@
-node_modules/*
+node\ examples/node_modules/*
 simple-signal-stream/config_bp.json
 
 
-Hans Rosling Gapminder Bubble Charts/.ipynb_checkpoints/Gapminderz-checkpoint.ipynb
 
 config.json

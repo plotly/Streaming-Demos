@@ -1,9 +1,7 @@
 # Plotly streaming examples
 
-Plotly streaming is an experimental feature and you should expect all the craziness that comes with this.
-
 ## What is Plotly streaming?
-[![Double Pendulum Simluation in Plotly](readme_gifs/real-timesensor.gif)](https://plot.ly/~streaming-demos/6/)
+[![Mock Signal Data](readme_gifs/real-timesensor.gif)](https://plot.ly/~streaming-demos/6/)
 
 
 [![Double Pendulum Simluation in Plotly](readme_gifs/doublependulum.gif)](https://plot.ly/~streaming-demos/4/)
@@ -13,14 +11,14 @@ Plotly streaming is an experimental feature and you should expect all the crazin
 
 1. Take a look at [this]() and [this]()!
 2. This is real-time data, everybody viewing these streaming plots sees the same data at the same time.
-3. If you are the owner of the plot you can head over to the Plotly webapp and style your streaming plot. When you save all the shared plots are live updated to reflect these changes.
-4. You can open another users streaming shared plot in the Plotly webapp and make your own styles but saving will result in a static copy (you can't steal someone else's stream).
-5. Changing the plot a stream token is linked to will automatically save the most recent data so viewers of the old plot will at least see a static copy of the most recent data.
+3. If you are the owner of the plot you can head over to the [Plotly app]("https://plot.ly") and style your streaming plot. When you save all the shared plots are live updated to reflect these changes.
+4. You can open another users streaming shared plot in the [Plotly app]("https://plot.ly") and make your own styles but saving will result in a static copy (you can't steal someone else's stream).
+5. Changing the plot which a stream token is linked to will automatically save the most recent data so viewers of the old plot will at least see a static copy of the most recent data.
 
 
-This repo contains several examples for working with the Plotly streaming API. There are 2 node.js repos and an IPython notebook example. As it is early days for Plotly's streaming API it should be considered experimental and will likely undergo changes as the feedback + iteration cycle continues. If you have any problems, notice any bugs (you will) or would like to provide us with suggestions you can hit us up at ben@plot.ly or send us a tweet at @plotlygraphs. We fully intend to add more examples to this repo, and if you have a sweet example that you would like us to include here, send a pull request!
+This repo contains several examples for working with the Plotly streaming API. There is 1 node.js repo and an IPython notebook example. As it is early days for Plotly's streaming API it should be considered experimental and will likely undergo changes as the feedback + iteration cycle continues. If you have any problems, notice any bugs (you will) or would like to provide us with suggestions you can hit us up at ben@plot.ly or send us a tweet at @plotlygraphs. We fully intend to add more examples to this repo, and if you have a sweet example that you would like us to include here, send a pull request!
 
-See the individual Repo's for example specific documentation.
+See the individual Repos for example specific documentation.
 
 
 ## Basic streaming concepts
@@ -76,3 +74,8 @@ Okay, super easy? Well, for real-time sharable & embeddable data visualization i
 
 ## Advanced streaming concepts
 - You must send data every minute otherwise we will consider the stream stale and destroy it. If your data comes in a slower rate send a heartbeat to let the server know it is still active. A heartbeat is simply a newline "\n" written within the minute window.
+
+## Contact Us
+Lead Streaming Engineer - ben@plot.ly
+Lead API Engineer - chrisp@plot.ly
+tweet us @plotlygraphs

@@ -1,3 +1,7 @@
 node\ examples/node_modules/*
 simple-signal-stream/config_bp.json
 config.json
+
+IPython examples/config.json
+
+IPython examples/.ipynb_checkpoints/Animation - Gapminder Bubble Charts-checkpoint.ipynb

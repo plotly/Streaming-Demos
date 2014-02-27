@@ -3,9 +3,14 @@
 Plotly streaming is an experimental feature and you should expect all the craziness that comes with this.
 
 ## What is Plotly streaming?
+<<<<<<< HEAD
+=======
+1. Take a look at this and this!
+
 [![Double Pendulum Simluation in Plotly](readme_gifs/real-timesensor.gif)](https://plot.ly/~streaming-demos/6/)
 
 
+>>>>>>> cc3248e180ce0db319274fb3948511b852eca50d
 [![Double Pendulum Simluation in Plotly](readme_gifs/doublependulum.gif)](https://plot.ly/~streaming-demos/4/)
 
 

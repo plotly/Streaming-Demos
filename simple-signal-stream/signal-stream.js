@@ -19,16 +19,15 @@ var httpOpts =  {
   }
 }
 
-// random signal stream options
+/*
+ * random signal stream options
+ * Plotly only accepts stringified newline seperated JSON
+ * so the separator is very important
+ */
 var sigOpts = {sep: "\n"}
 
 var signalstream = Signal(sigOpts)
 var plotlystream = hyperquest(httpOpts)
 
-
-/*
- * BIG NOTE!
- * We are streaming newline separated stringified JSON!
- * '{"x": 2, "y": 3}\n'
- */
+// Okay - stream to our plot!
 signalstream.pipe(plotlystream)

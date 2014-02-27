@@ -25,7 +25,7 @@ View your API key and streaming tokens in your settings: [https://plot.ly/settin
 #### Forever-Repeating Hans Rosling Bubble Chart: [https://plot.ly/~streaming-demos/3](https://plot.ly/~streaming-demos/3)
 
 
-### Get in touch :-)
+### Get in touch!
 #### [@plotlygraphs](https://twitter.com/plotlygraphs)
 #### [Plotly Facebook](https://facebook.com/plotly)
 #### <ben@plot.ly>

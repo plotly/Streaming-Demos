@@ -18,7 +18,7 @@ Sign-up to plotly here: [https://plot.ly/ssu](https://plot.ly/ssu)
 
 View your API key and streaming tokens in your settings: [https://plot.ly/settings](https://plot.ly/settings)
 
-### Get in touch
+### Get in touch :-)
 #### [@plotlygraphs](https://twitter.com/plotlygraphs)
 #### [Plotly Facebook](https://facebook.com/plotly)
 #### <ben@plot.ly>

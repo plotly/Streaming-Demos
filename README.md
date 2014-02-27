@@ -1,7 +1,7 @@
 # Plotly streaming examples
 
 ## What is Plotly streaming?
-[![Mock Signal Data](readme_gifs/real-timesensor.gif)](https://plot.ly/~streaming-demos/6/)
+[![Mock Signal Data](readme_gifs/real-timesensor.gif)](http://plot.ly/~bpostlethwaiteb/50/)
 
 
 [![Double Pendulum Simluation in Plotly](readme_gifs/doublependulum.gif)](https://plot.ly/~streaming-demos/4/)

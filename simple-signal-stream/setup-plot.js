@@ -34,8 +34,6 @@ var layout = {
   , "fileopt": "overwrite"
   , "layout": {
       "title": "streaming mock sensor data"
-    , "width" : 600
-    , "height": 400
   }
   , "world_readable": true
 }

@@ -64,10 +64,10 @@ var options =  {
 var plotlyStream = hyperquest(options)
 signalStream.pipe(req)
 ```
-Okay, super easy? Well, for real-time sharable & embeddable data visualization it sure is easier than all the other alternatives. Check out the example folders in this Repo. If you can do the Node check out `simple-signal-stream` as it will get you up and streaming quickly.
+Okay, super easy? Well, for real-time sharable & embeddable data visualization it sure is easier than all the other alternatives. For real examples that you can get running yourself check out the example folders in this repo. If you are into Node.js check out `simple-signal-stream` as it will get you up and streaming quickly.
 
 ## Intermediate streaming concepts
-- Data **MUST** be sent as newline separated JSON. The stream server parses incoming data streams on newlines, so without newlines it will just assume a very long single JSON object and eventually just destroy the stream.
+- Data **MUST** be sent as newline separated *stringified* JSON. The stream server parses incoming data streams on newlines, so without newlines it will just assume a very long single JSON object and eventually just destroy the stream.
 ```javascript
 '{ "x": 3, "y": 1 }\n'
 ```

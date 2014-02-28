@@ -27,12 +27,13 @@ var httpOpts =  {
 var sigOpts = {sep: "\n", tdelta: 100}
 
 var signalstream = Signal(sigOpts)
-var plotlystream = hyperquest(httpOpts)
+var plotly = hyperquest(httpOpts)
 
-// Okay - stream to our plot!
-signalstream.pipe(plotlystream)
-
-plotlystream.on("error", function (err) {
+plotly.on("error", function (err) {
     signalstream.destroy()
     console.log(err)
 })
+
+// Okay - stream to our plot!
+signalstream.pipe(plotly)
+

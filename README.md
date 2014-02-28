@@ -3,6 +3,7 @@
 ## What is Plotly streaming?
 [![Mock Signal Data](readme_gifs/real-timesensor.gif)](http://plot.ly/~streaming-demos/6)
 
+[![Graphing the Twitter Stream in Plotly](readme_gifs/twitter.gif)](http://plot.ly/~streaming-demos/13)
 
 [![Double Pendulum Simluation in Plotly](readme_gifs/doublependulum.gif)](https://plot.ly/~streaming-demos/4/)
 

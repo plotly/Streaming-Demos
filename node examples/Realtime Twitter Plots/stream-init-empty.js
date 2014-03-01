@@ -1,5 +1,5 @@
 var Plotly = require('plotly')
-  , config = require('./config_chris.json')
+  , config = require('./config.json')
   , plot_config = require('./plot_config.json');
 
 // Enter your plotly credentials
@@ -17,12 +17,12 @@ var tweet_scatter = {
   , y:[]
   , text:[]
   , type:'scatter'
-  , mode:'markers+text'
+  , mode:'markers+lines'
   , textposition: 'bottom'
-  , marker: {'size': 16, 'opacity': 0.7}
+  , marker: {'size': 8, 'opacity': 0.7}
   , stream: {
       token:token
-    , maxpoints: 8
+    , maxpoints: 200000
   }
 };
 
@@ -38,7 +38,7 @@ var plotlyOptions = {
           , ticks : ""
         },
         yaxis : {
-            title: 'Happiness Ranking of Tweet (10 is happy, 0 is unhappy)'
+            title: 'Happiness Ranking of Tweet (0 is unhappy, 10 is happy)'
           , showgrid : true
           , zeroline : false
           , showline: false

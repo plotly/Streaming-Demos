@@ -1,6 +1,6 @@
 var Twit = require('twit')
   , hyperquest = require('hyperquest')
-  , config = require('./config_chris.json')
+  , config = require('./config.json')
   , plot_config = require('./plot_config.json')
   , T = new Twit({
     consumer_key: config.twitter_consumer_key

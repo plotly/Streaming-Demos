@@ -17,12 +17,12 @@ var tweet_scatter = {
   , y:[]
   , text:[]
   , type:'scatter'
-  , mode:'markers+lines'
+  , mode:'markers+text'
   , textposition: 'bottom'
-  , marker: {'size': 8, 'opacity': 0.7}
+  , marker: {'size': 16, 'opacity': 0.7}
   , stream: {
       token:token
-    , maxpoints: 200000
+    , maxpoints: 8
   }
 };
 

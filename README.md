@@ -2,13 +2,17 @@
 
 ## What is Plotly streaming?
 [![Mock Signal Data](readme_gifs/real-timesensor.gif)](http://plot.ly/~streaming-demos/6)
+Implemented in Node: [Live Graph](https://plot.ly/~streaming-demos/6/)
+Implemented in IPython: [Live Graph](https://plot.ly/~streaming-demos/12/)
 
-[![Graphing the Twitter Stream in Plotly](readme_gifs/twitter.gif)](http://plot.ly/~streaming-demos/13)
+[![Graphing the Twitter Stream in Plotly](readme_gifs/twitter.gif)](https://plot.ly/~streaming-demos/14/)
+Implemented in Node, example code is in this repo.
 
 [![Double Pendulum Simluation in Plotly](readme_gifs/doublependulum.gif)](https://plot.ly/~streaming-demos/4/)
-
+Implemented in IPython, example code is in this repo.
 
 [![Hans Rosling Bubble Chart in Plotly](readme_gifs/hansrosling.gif)](https://plot.ly/~streaming-demos/3/)
+Implemented in IPython, example code is in this repo.
 
 1. Take a look at the actual streaming plots for the example .gifs above: [signalstream](http://plot.ly/~streaming-demos/6), [doublePendulum]() and our take on a [Hans Rosling bubble chart]().
 2. This is real-time data, everybody viewing these streaming plots sees the same data at the same time.

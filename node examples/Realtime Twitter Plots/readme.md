@@ -1,8 +1,7 @@
-
 ## Real-time plotting the twitter stream
 
 
-## View the live graph here: [http://plot.ly/~streaming-demos/7](http://plot.ly/~streaming-demos/7)
+## View the live graph here: [https://plot.ly/~streaming-demos/14/](https://plot.ly/~streaming-demos/14/)
 
 ## Usage
 Download node.js here: [http://nodejs.org/download/](http://nodejs.org/download/)

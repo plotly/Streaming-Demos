@@ -1,10 +1,10 @@
 var hyperquest = require('hyperquest')
   // , stream_token = require('../config.json').simpleStreamToken // ADD YOUR STREAM TOKEN HERE
-/*
+
 var sensors_map = { "liquidTemp" : "none", "humidityi2c" : "none"};
 var liquidTemp = require('./sensors/temp');
 var humi2c = require('./sensors/humi2c')
-*/
+
 var token1 = "g9ngw7qyyy";
 var token2 = "begbqoc59p";
 

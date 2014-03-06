@@ -9,7 +9,7 @@ var token = config.tokens[1]  // tokens can be viewed and generated in your sett
 var filename = "twitter-stream-gif";
 
 var lat = plot_config.map.lat
-  , lon = plot_config.map.lon
+  , lon = plot_config.map.lon; 
 
 var tweet_scatter = {
     name: 'Tweet!<br>Hover to view text'

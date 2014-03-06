@@ -28,13 +28,13 @@ var x = 0
 setInterval( function () {
     x += 0.05
     // req1.write(JSON.stringify({x: x, y: x})+ "\n")    
-   req1.write(JSON.stringify({x: x, y: liquidTempValue(x)})+ "\n")
-   req2.write(JSON.stringify({x: x, y: airTempValue(x)})+ "\n")
+   req1.write(JSON.stringify({x: x, y: liquidTempValue()})+ "\n")
+   req2.write(JSON.stringify({x: x, y: airTempValue()})+ "\n")
 }, 2000)
 
 
 
-function liquidTempValue(x) {
+function liquidTempValue() {
   
   var liquidTmp = liquidTemp.read_value( function(datastr){
       sensors_map.liquidTemp = JSON.parse(datastr);
@@ -47,7 +47,7 @@ function liquidTempValue(x) {
 
 }
 
-function airTempValue(x) {
+function airTempValue() {
    
   var airTmp = humi2c.read_value( function(datastr2){
       sensors_map.humidityi2c = JSON.parse(datastr2);

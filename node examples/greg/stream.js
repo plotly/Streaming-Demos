@@ -30,26 +30,33 @@ setInterval( function () {
     // req1.write(JSON.stringify({x: x, y: x})+ "\n")    
    req1.write(JSON.stringify({x: x, y: liquidTempValue(x)})+ "\n")
    req2.write(JSON.stringify({x: x, y: airTempValue(x)})+ "\n")
-}, 50)
+}, 2000)
 
 
 
 function liquidTempValue(x) {
-   
-  return liquidTemp.read_value( function(datastr){
+  
+  var liquidTmp = liquidTemp.read_value( function(datastr){
       sensors_map.liquidTemp = JSON.parse(datastr);
       return sensors_map.liquidTemp.Farhenheit;
   });
+
+  console.log("LIQUID TMP: ", liquidTmp);
+
+  return liquidTmp;
 
 }
 
 function airTempValue(x) {
    
-  return humi2c.read_value( function(datastr2){
+  var airTmp = humi2c.read_value( function(datastr2){
       sensors_map.humidityi2c = JSON.parse(datastr2);
-      return sensors_map.humidityi2c.Farhenheit
+      return sensors_map.humidityi2c.Farhenheit;
   });
 
+  console.log("AIR TMP: ", airTmp);
+
+  return airTmp;
 }
 
  

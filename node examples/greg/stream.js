@@ -37,8 +37,8 @@ setInterval( function () {
 function liquidTempValue() {
   
   var liquidTmp = liquidTemp.read_value( function(datastr){
-      sensors_map.liquidTemp = JSON.parse(datastr);
-      return sensors_map.liquidTemp.Farhenheit;
+      liquidTemp = JSON.parse(datastr);
+      return liquidTemp.Farhenheit;
   });
 
   console.log("LIQUID TMP: ", liquidTmp);
@@ -50,8 +50,8 @@ function liquidTempValue() {
 function airTempValue() {
    
   var airTmp = humi2c.read_value( function(datastr2){
-      sensors_map.humidityi2c = JSON.parse(datastr2);
-      return sensors_map.humidityi2c.Farhenheit;
+      humidityi2c = JSON.parse(datastr2);
+      return humidityi2c.Farhenheit;
   });
 
   console.log("AIR TMP: ", airTmp);

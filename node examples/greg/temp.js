@@ -6,7 +6,7 @@ exports.read_value = function (value_reporter) {
 
   console.log("tempId: " + tempId);
   exec( "cat /sys/bus/w1/devices/" + tempId + "/w1_slave | grep t= | cut -f2 -d= | awk '{print $1/1000}'", function( error, stdout, stderr ){
-    
+
     var tempC = parseFloat(stdout);
     var tempF = ((1.8)*tempC + 32).toFixed(2);
     

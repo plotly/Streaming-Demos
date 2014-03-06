@@ -38,7 +38,7 @@ function liquidTempValue() {
   
   var liquidTmp = liquidTemp.read_value( function(datastr){
       liquidTemp = JSON.parse(datastr);
-      return liquidTemp.Farhenheit;
+      return liquidTemp.Fahrenheit;
   });
 
   console.log("LIQUID TMP: ", liquidTmp);
@@ -51,7 +51,7 @@ function airTempValue() {
    
   var airTmp = humi2c.read_value( function(datastr2){
       humidityi2c = JSON.parse(datastr2);
-      return humidityi2c.Farhenheit;
+      return humidityi2c.Fahrenheit;
   });
 
   console.log("AIR TMP: ", airTmp);

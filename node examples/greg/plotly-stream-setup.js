@@ -26,10 +26,10 @@ var data = [{
   , y:[]
   , type: 'scatter'
   , mode: 'lines'
-/*  , stream: {
+  , stream: {
       token: token2
     , maxpoints: 10
-    }*/
+    }
   }
 ]
 

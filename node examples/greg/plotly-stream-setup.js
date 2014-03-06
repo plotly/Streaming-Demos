@@ -9,7 +9,7 @@ var key = "u6jlwbypiq"; // Your plotly API key, view here: https://plot.ly/api/k
 var token1 = "g9ngw7qyyy";
 var token2 = "begbqoc59p";
 var filename = "streamingTemp";
-var server = 'http://ec2-54-196-84-85.compute-1.amazonaws.com/'; //'http://ec2-54-225-12-108.compute-1.amazonaws.com/'
+var server = 'https://plot.ly/';
 
 var data = [{
     x:[]

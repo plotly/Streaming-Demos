@@ -28,7 +28,7 @@ var x = 0
 setInterval( function () {
     x += 0.05
     // req1.write(JSON.stringify({x: x, y: x})+ "\n")    
-   req1.write(JSON.stringify({x: x, y: liquidTempValue(x)*/})+ "\n")
+   req1.write(JSON.stringify({x: x, y: liquidTempValue(x)})+ "\n")
    req2.write(JSON.stringify({x: x, y: airTempValue(x)})+ "\n")
 }, 50)
 

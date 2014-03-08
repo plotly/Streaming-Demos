@@ -17,3 +17,5 @@ IPython examples/config_chris.json
 node examples/Realtime Twitter Plots/config_chris.json
 
 IPython examples/.ipynb_checkpoints/Sockets-checkpoint.ipynb
+
+*-checkpoint.ipynb

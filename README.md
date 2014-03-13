@@ -1,30 +1,60 @@
-# Plotly streaming examples
+## Plotly's Real-Time Streaming API
 
-## What is Plotly streaming?
+
+#### This is an example of a real-time plotly graph: [http://plot.ly/~streaming-demos/6/](http://plot.ly/~streaming-demos/6/)
+
+- You and I see the same data, updating at the same time
+
+- Plotly streaming graphs are immediately shareable -- by shortlink or as embedded in website or an IPython notebook
+
+- Owners of plotly graphs can edit their with the plotly web-app. All of the viewers of the graph will see the changes update live
+
+- It's fast: graphs update up to 20 times / second.
+
+This repo contains several examples for working with the Plotly streaming API. All of the examples are running in real-time on a remote server. View the IPython notebooks in nbviewer here: [nbviewer.ipython.org/github/plotly/Streaming-Demos](nbviewer.ipython.org/github/plotly/Streaming-Demos)
+
+Questions? Suggestions? Made a sweet real-time graph? Hit us up at <ben@plot.ly> or [@plotlygraphs](https://twitter.com/plotlygraphs)!
+
+See the individual folders for detailed documentation.
+
+## Examples
+#### Graphing Real-time Sensor Data
 [![Mock Signal Data](readme_gifs/real-timesensor.gif)](http://plot.ly/~streaming-demos/6)
-Implemented in Node: [Live Graph](https://plot.ly/~streaming-demos/6/)
-Implemented in IPython: [Live Graph](https://plot.ly/~streaming-demos/12/)
 
+The live graph, running from a Node server: [https://plot.ly/~streaming-demos/6/](https://plot.ly/~streaming-demos/6/). View the code in the Node folder in this repo.
+
+The live graph, running from an IPython server: [https://plot.ly/~streaming-demos/12/](https://plot.ly/~streaming-demos/12/). View the code in the IPython folder in this repo.
+
+#### Embedded systems
+##### Our real-time heart rate monitor (click to view the video):
+<p align="center">
+<a href="https://vine.co/v/Mq2LQexrbl7">
+<img src="http://new.tinygrab.com/c751bc2ee2533bf46bba1b0b65720764edcfb06c6b.png" />
+</a>
+</p>
+
+The Arduino Yún library is here: [https://github.com/plotly/arduino-api/tree/master/plotly_yun](https://github.com/plotly/arduino-api/tree/master/plotly_yun)
+
+##### Raspbery Pi
+Example code with the Plotly-Python library: [https://github.com/plotly/raspberrypi](https://github.com/plotly/raspberrypi)
+
+
+#### Graphing the Real-time Twitter Stream
 [![Graphing the Twitter Stream in Plotly](readme_gifs/twitter.gif)](https://plot.ly/~streaming-demos/14/)
+
 Implemented in Node, example code is in this repo.
 
+#### Plotting Simulations
 [![Double Pendulum Simluation in Plotly](readme_gifs/doublependulum.gif)](https://plot.ly/~streaming-demos/4/)
-Implemented in IPython, example code is in this repo.
 
+View the live, never-ending double pendulum simulation graph in our IPython notebook here: [http://nbviewer.ipython.org/github/plotly/Streaming-Demos/blob/master/IPython%20examples/Simulation%20-%20Double%20Pendulum.ipynb](http://nbviewer.ipython.org/github/plotly/Streaming-Demos/blob/master/IPython%20examples/Simulation%20-%20Double%20Pendulum.ipynb)
+
+#### Animations
 [![Hans Rosling Bubble Chart in Plotly](readme_gifs/hansrosling.gif)](https://plot.ly/~streaming-demos/3/)
-Implemented in IPython, example code is in this repo.
 
-1. Take a look at the actual streaming plots for the example .gifs above: [signalstream](http://plot.ly/~streaming-demos/6), [doublePendulum]() and our take on a [Hans Rosling bubble chart]().
-2. This is real-time data, everybody viewing these streaming plots sees the same data at the same time.
-3. Stream plots are sharable, embeddable in any website and even in IPython notebooks!
-4. If you are the owner of the plot you can head over to the [Plotly app]("https://plot.ly") and style your streaming plot. When you save all the shared plots are live updated to reflect these changes.
-5. You can open another users streaming shared plot in the [Plotly app]("https://plot.ly") and make your own styles but saving will result in a static copy (you can't steal someone else's stream).
-6. Changing the plot which a stream token is linked to will automatically save the most recent data so viewers of the old plot will at least see a static copy of the most recent data.
+View the live, forever-repeating Hans Rosling bubble chart graph in an IPython notebook here: [http://nbviewer.ipython.org/github/plotly/Streaming-Demos/blob/master/IPython%20examples/Animation%20-%20Gapminder%20Bubble%20Charts.ipynb](http://nbviewer.ipython.org/github/plotly/Streaming-Demos/blob/master/IPython%20examples/Animation%20-%20Gapminder%20Bubble%20Charts.ipynb)
 
 
-This repo contains several examples for working with the Plotly streaming API. There is 1 node.js repo and an IPython notebook example. As it is early days for Plotly's streaming API it should be considered experimental and will likely undergo changes as the feedback + iteration cycle continues. If you have any problems, notice any bugs (you will) or would like to provide us with suggestions you can hit us up at ben@plot.ly or send us a tweet at @plotlygraphs. We fully intend to add more examples to this repo, and if you have a sweet example that you would like us to include here, send a pull request!
-
-See the individual Repos for example specific documentation.
 
 
 ## Basic streaming concepts
@@ -69,7 +99,7 @@ var options =  {
 var plotlyStream = hyperquest(options)
 signalStream.pipe(req)
 ```
-Okay, super easy? Well, for real-time sharable & embeddable data visualization it sure is easier than all the other alternatives. For real examples that you can get running yourself check out the example folders in this repo. If you are into Node.js check out `simple-signal-stream` as it will get you up and streaming quickly.
+And that's it!
 
 ## Intermediate streaming concepts
 - Data **MUST** be sent as newline separated *stringified* JSON. The stream server parses incoming data streams on newlines, so without newlines it will assume a very long single JSON object and eventually just destroy the stream.
@@ -82,9 +112,38 @@ Okay, super easy? Well, for real-time sharable & embeddable data visualization i
 ## Advanced streaming concepts
 - You must send data every minute otherwise we will consider the stream stale and destroy it. If your data comes in a slower rate send a heartbeat to let the server know it is still active. A heartbeat is simply a newline `"\n"` written within the minute window.
 
+## HTTP Details
+Plotly's streaming-API accepts chunked-encoded HTTP posts and allows these connections to be held open indefinitely. Here is an example of a raw HTTP post:
+
+```
+POST / HTTP/1.1\r\n
+Host: stream.plot.ly\r\n
+User-Agent: Python\r\n
+Transfer-Encoding: chunked\r\n
+Connection: close\r\n
+plotly-streamtoken: ab3dk4FBDd\r\n
+\r\n
+11\r\n
+{"y": 1, "x": 1}\n\r\n
+11\r\n
+{"y": 2, "x": 2}\n\r\n
+11\r\n
+{"y": 3, "x": 3}\n\r\n
+0\r\n
+\r\n
+```
+
+A few key points:
+- An additional header is embedded in the POST: `plotly-streamtoken`
+- In HTTP every "chunk" of data (e.g. `{"y": 3, "x": 3}\n`) must be preceded with the length of the chunk in hex. Also, every line is separated by a `\r\n`
+- Plotly plots every chunk of data in your browser as soon as it recieves it
+- Data can be sent to plotly indefinitely, but we'll close connections if we don't hear anything for 1 minute. You can keep the connection open by sending a heartbeat every minute with a new line: `\n`. Connections are closed with `0\r\n\r\n`
+
+A low-level HTTP example with Python's socket and httlib libraries are in this repo, view it in nbviewer here: [http://nbviewer.ipython.org/github/plotly/Streaming-Demos/tree/master/IPython%20examples/http%20details/](http://nbviewer.ipython.org/github/plotly/Streaming-Demos/tree/master/IPython%20examples/http%20details/)
+
 ## Contact Us
 Lead Streaming Engineer - ben@plot.ly
 
 Lead API Engineer - chris@plot.ly
 
-twitter @plotlygraphs
+twitter [@plotlygraphs](https://twitter.com/plotlygraphs)

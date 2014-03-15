@@ -3,7 +3,7 @@
 
 #### This is an example of a real-time plotly graph: [http://plot.ly/~streaming-demos/6/](http://plot.ly/~streaming-demos/6/)
 
-- You and I see the same data, updating at the same time
+- You and I see the same data, updating at the same time. Try this: open up a streaming plot in two different browser windows!
 
 - Plotly streaming graphs are immediately shareable -- by shortlink or as embedded in website or an IPython notebook
 

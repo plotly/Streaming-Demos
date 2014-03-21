@@ -4,11 +4,6 @@ var Plotly = require('plotly')
   , user = config['user']
   , token = config['token']
 
-// check for user data
-if (!key || !user || !token) {
-    console.log("  Please put the plot.ly/settings user credentials into the config.json file")
-    process.exit()
-}
 
 // build a data object - see https://plot.ly/api/rest/docs for information
 var data = {
@@ -28,7 +23,7 @@ var data = {
   }
 }
 
-// build you layout and file options
+// build your layout and file options
 var layout = {
     "filename": "streamSimpleSensor"
   , "fileopt": "overwrite"
@@ -40,8 +35,19 @@ var layout = {
 
 
 /*
- * Call plotly.plot to set the file up.
- * If you have included a streaming token
- * you should get a "All Streams Go!" message
+ * random signal stream options
+ * Plotly only accepts stringified newline seperated JSON
+ * so the separator is very important
  */
-Plotly.plot(data, user, key, layout)
+var sigOpts = {sep: "\n", tdelta: 100}
+
+var signalstream = Signal(sigOpts)
+var plotly = hyperquest(httpOpts)
+
+plotly.on("error", function (err) {
+    signalstream.destroy()
+    console.log(err)
+})
+
+// Okay - stream to our plot!
+signalstream.pipe(plotly)

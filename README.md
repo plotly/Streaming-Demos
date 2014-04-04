@@ -13,7 +13,7 @@
 
 This repo contains several examples for working with the Plotly streaming API. All of the examples are running in real-time on a remote server. View the IPython notebooks in nbviewer here: [nbviewer.ipython.org/github/plotly/Streaming-Demos](nbviewer.ipython.org/github/plotly/Streaming-Demos)
 
-Questions? Suggestions? Made a sweet real-time graph? Hit us up at <ben@plot.ly> or [@plotlygraphs](https://twitter.com/plotlygraphs)!
+Questions? Suggestions? Made a sweet real-time graph? Get in touch at <ben@plot.ly> or [@plotlygraphs](https://twitter.com/plotlygraphs)!
 
 See the individual folders for detailed documentation.
 

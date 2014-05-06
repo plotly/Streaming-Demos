@@ -1,4 +1,6 @@
 node_examples/node_modules/*
+node\ examples
+
 node_examples/simple-signal-stream/config.json
 config.json
 
@@ -19,3 +21,4 @@ node_examples/Realtime Twitter Plots/config_chris.json
 IPython examples/.ipynb_checkpoints/Sockets-checkpoint.ipynb
 
 *-checkpoint.ipynb
+IPython examples/http details/Untitled0.ipynb

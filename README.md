@@ -22,10 +22,10 @@ See the individual folders for detailed documentation.
 #### Plotly's Python API
 
 Examples of Plotly's Streaming API together with Plotly's [Python API](https://github.com/plotly/python-api) in
-the [User Guide](http://nbviewer.ipython.org/github/plotly/python-user-guide/blob/master/s00_homepage/s00_homepage.ipynb)
+the [User Guide](http://nbviewer.ipython.org/github/plotly/python-user-guide/blob/master/s00_homepage/s00_homepage.ipynb).
 
-The examples IPython notebooks in the User Guide are up-to-date with the latest
-version of Plotly's Python API, unlike the examples in the `IPython examples`
+The example IPython notebooks in the User Guide are up-to-date with the latest
+version of Plotly's Python API (version 1.0.\*), unlike the examples in the `IPython examples`
 folder of this repository.
 
 #### Graphing Real-time Sensor Data

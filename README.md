@@ -18,6 +18,16 @@ Questions? Suggestions? Made a sweet real-time graph? Get in touch at <ben@plot.
 See the individual folders for detailed documentation.
 
 ## Examples
+
+#### Plotly's Python API
+
+Examples of Plotly's Streaming API together with Plotly's [Python API](https://github.com/plotly/python-api) in
+the [User Guide](http://nbviewer.ipython.org/github/plotly/python-user-guide/blob/master/s00_homepage/s00_homepage.ipynb)
+
+The examples IPython notebooks in the User Guide are up-to-date with the latest
+version of Plotly's Python API, unlike the examples in the `IPython examples`
+folder of this repository.
+
 #### Graphing Real-time Sensor Data
 [![Mock Signal Data](readme_gifs/real-timesensor.gif)](http://plot.ly/~streaming-demos/6)
 

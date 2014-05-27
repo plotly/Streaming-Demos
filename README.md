@@ -28,6 +28,8 @@ The example IPython notebooks in the User Guide are up-to-date with the latest
 version of Plotly's Python API (version 1.0.\*), unlike the examples in the `IPython examples`
 folder of this repository.
 
+****
+
 #### Graphing Real-time Sensor Data
 [![Mock Signal Data](readme_gifs/real-timesensor.gif)](http://plot.ly/~streaming-demos/6)
 

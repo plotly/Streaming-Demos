@@ -1,5 +1,20 @@
 # Real-Time Streaming with Python and IPython
 
+### Warning!
+
+These example notebooks are not up-to-date with the latest version of Plotly's
+Python API (version 1.0.\*). 
+
+Refer to Plotly's Python [User Guide](http://nbviewer.ipython.org/github/plotly/python-user-guide/blob/master/s00_homepage/s00_homepage.ipynb) 
+and more specifically [section 7](http://nbviewer.ipython.org/github/plotly/python-user-guide/blob/master/s7_streaming/s7_streaming.ipynb)
+for an updated version of these notebooks.
+
+Readers looking for info about the nuts and bolts of Plotly's streaming API
+should refer to [this link](https://plot.ly/streaming/).
+
+*****
+
+
 ### View these notebooks here: [http://nbviewer.ipython.org/github/plotly/Streaming-Demos/tree/master/IPython%20examples/](http://nbviewer.ipython.org/github/plotly/Streaming-Demos/tree/master/IPython%20examples/)
 
 ### Running these notebooks

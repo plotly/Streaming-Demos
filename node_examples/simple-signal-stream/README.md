@@ -43,6 +43,3 @@ Okay, now you should be streaming data to the plot given at the `url`. Head ther
 ### Success?
 Cool! Now have some fun and modify these scripts, change the data stream or open it up in the webapp and restyle it and click the `save` button and have your changes propogate to any shared plots that are currently viewing your data!
 Check out our other examples and don't forget to send us a tweet of your favourite streaming plots @plotlygraphs. Stream on!
-
-### Hmmmm...
-This is all new and experimental so no worries, send me an email at ben@plot.ly. I will get back to you ASAP.
